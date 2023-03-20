@@ -1,0 +1,85 @@
+/* Cascade Style Sheet (CSS) */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap'); /* trae los estilos. Trae un css externo */
+*{
+    font-family: 'Roboto', sans-serif; /* el asterisco es un selector universal, es decir, para seleccionar todo al mismo tiempo. El font family es para activar lo importado arriba, en éste caso, la fuente */
+    box-sizing: border-box; /* mide hacia adentro la longitud de las cajas. Es decir, si le pongo un borde de 5 pixeles, eso no va a alterar el tamaño original que tenía la caja, no le va a sumar 5 px */
+    margin: 0; /* elimina todos los márgenes. Por defecto viene de 5px */
+}
+body{ /* para llamar al body, es decir, hacer cambios en el body */
+    background-color: white; /* para color de fondo */
+}
+h2{
+    color: black; /* cambiar el color de la letra, en éste caso el h2 */
+    font-size: 30px; /* cambia tamaño de fuente */
+}
+nav a{
+    color: black; /* cambia el color de las palabras del menú */
+    text-decoration: none; /* sale el subrayado del menu */
+}
+nav a:hover{ /* cambia el color de un ícono al posar el puntero sobre él */
+    color: red;
+    background-color: rgb(249, 249, 253);
+    border-radius: 5px;
+    padding: 1px;
+    transition: 1s ease; /* para poner transiciones al posar el puntero sobre algun menú */
+}
+header{
+    display: flex; /* Se aplica al padre, en éste caso el Header y acomoda a todos los hijos. Tiene muchas propiedades para utilizar */
+    flex-direction: row; /* menú en columna, es decir, abajo del h2 en éste caso, o al lado usando "row"*/
+    align-items: center; /* alinear títulos y menús */
+    justify-content: space-between; /* separa lo máximo posible */
+    padding-top: 20px; /* todos los padding es para márgenes del borde para adentro de la caja */
+    padding-bottom: 20px;
+    padding-left: 5vw; /* unidad de medida relacionada al porcentaje del viewport, es decir, al largo o ancho de la pantalla */
+    padding-right: 5vw;
+    margin-left: 20px; /* los margin son para márgenes desde el borde de la página hacia adentro */
+    margin-right: 10vh;
+    margin-top: 10vh;
+    border: 1px solid rgb(113, 110, 110); /* recuadro negro del menú */
+    box-shadow: 0px 3px 7px; /* desplazamiento, primero horizontal, luego vertical, luego difuminado y luego color*/
+}
+nav{
+    display: flex;
+    gap: 30px; /* espacio entre los menús */
+}
+.caja{ /* llamo a una división que en éste caso se llama "caja" */
+    width: 200px; /* cambio al ancho del div llamado */
+    height: 200px; /* cambio el largo del div llamado */
+    background-color: rgb(101, 214, 101);/* cambio el fondo del div llamado */
+    border: 5px black solid; /* borde negro sólido */
+    border-radius: 5px; /* borde redondeado */
+    padding: 10px 5px 20px 7px; /* van en sentido horario, empezando desde arriba. Acomoda el texto tomando la distancia hacia los bordes de la caja */ 
+    margin: 20px 200px; /* mueve la posición de la caja */
+    text-align: center; /* centra el texto, de izq a der */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ésta línea y las 2 anteriores son para centrar el h2 "Hola" */
+}
+@keyframes left-to-right { /* para hacer una animación, mueve algo de izquierda a derecha */
+    0%{
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }    
+}
+
+.caja h2{ /* con ésto llamo específicamente al h2 de adentro de la caja. Otra opción para hacer ése mismo llamado sería agregarle "class" al h2 cuando fué definido */
+    color: blueviolet;
+    font-weight: 100;
+    -webkit-text-stroke: 1px black; /* borde para el texto */
+    line-height: 1; /* espacio entre líneas de texto */
+    word-spacing: 20px; /* espacio entre las palabras de una misma línea */
+    
+}
+.cajita:hover{ 
+    transform: rotate(360deg);
+    transition: 1s ease-in;
+}
+header h1{ /* para llamar a la animación definida más arriba y aplicarla al h1 */
+    animation-name: left-to-right;
+    animation-duration: 4s;
+}
